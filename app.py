@@ -4,9 +4,9 @@ import pandas as pd
 import sklearn 
 import numpy as np
 
-lr = pickle.load(open(r'C:\Users\Lenovo\Desktop\Imarticus\Deployment\lr1.pkl', 'rb'))  # rb: read bianry
-dt = pickle.load(open(r'C:\Users\Lenovo\Desktop\Imarticus\Deployment\dt1.pkl', 'rb'))  # rb: read bianry
-rf = pickle.load(open(r'C:\Users\Lenovo\Desktop\Imarticus\Deployment\rf1.pkl', 'rb'))  # rb: read bianry
+lr = pickle.load(open('lr1.pkl', 'rb'))  # rb: read bianry
+dt = pickle.load(open('dt1.pkl', 'rb'))  # rb: read bianry
+rf = pickle.load(open('rf1.pkl', 'rb'))  # rb: read bianry
 
 model= st.sidebar.selectbox('Select the model', ['LogReg', 'Decision Tree', 'Random Forest'])
  
@@ -109,5 +109,6 @@ if st.button('Predict'):
     else:
         pred=rf.predict(test_df)
         st.success(pred[0])
+
 
 
