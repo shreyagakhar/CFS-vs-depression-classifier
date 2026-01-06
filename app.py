@@ -87,12 +87,12 @@ test_input= [[age, gen_m, sq_index, bf_level, pain_score, stress_level, phq9,
              fat_sev, pem_duration, sleep, pem, ws_work, 
              sa, exf, mm]]
 
-df_columns= [['age', 'gender', 'sleep_quality_index', 'brain_fog_level',
+df_columns= ['age', 'gender', 'sleep_quality_index', 'brain_fog_level',
              'physical_pain_score', 'stress_level', 'depression_phq9_score',
             'fatigue_severity_scale_score', 'pem_duration_hours',
             'hours_of_sleep_per_night', 'pem_present', 'work_status',
             'social_activity_level', 'exercise_frequency',
-            'meditation_or_mindfulness']]
+            'meditation_or_mindfulness']
 
 test_df= pd.DataFrame(test_input, columns=df_columns)
 st.write('Test Data')
@@ -109,6 +109,7 @@ if st.button('Predict'):
     else:
         pred=rf.predict(test_df)
         st.success(pred[0])
+
 
 
 
